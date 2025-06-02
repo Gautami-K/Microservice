@@ -1,11 +1,5 @@
-def service = "adservice"
-
 pipeline {
   agent any
-
-  environment {
-    SERVICE_NAME = "${service}"
-  }
 
   stages {
     stage('Build Docker Image') {
