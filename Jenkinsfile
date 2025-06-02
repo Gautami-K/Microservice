@@ -1,12 +1,10 @@
-def imageTag = "${env.BUILD_NUMBER}"
-def service = "recommendationservice"
+def IMAGE_TAG = env.BUILD_NUMBER
 
 pipeline {
   agent any
 
   environment {
-    IMAGE_TAG = imageTag
-    SERVICE_NAME = service
+    SERVICE_NAME = 'recommendationservice'
   }
 
   stages {
