@@ -11,7 +11,9 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
+            def service = "adservice"
             def imageTag = env.BUILD_NUMBER
+            env.SERVICE_NAME = service
             withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
               sh "docker build -t gautamiii/${SERVICE_NAME}:${IMAGE_TAG} ."
             }
