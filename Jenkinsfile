@@ -10,9 +10,11 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
+           dir('src') {
             withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
               sh "docker build -t gautamiii/${SERVICE_NAME}:${IMAGE_TAG} ."
             }
+           }
         }
       }
     }
