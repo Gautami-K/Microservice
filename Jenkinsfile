@@ -4,7 +4,7 @@ pipeline {
   agent any
 
   environment {
-    SERVICE_NAME = ${service}
+    SERVICE_NAME = "${service}"
   }
 
   stages {
