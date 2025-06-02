@@ -1,13 +1,13 @@
 pipeline {
   agent any
-
+  environment {
+        SERVICE_NAME = 'adservice'
+    }
   stages {
     stage('Build Docker Image') {
       steps {
         script {
-            def service = "adservice"
-            def imageTag = env.BUILD_NUMBER
-            env.SERVICE_NAME = service
+            def IMAGE_TAG = env.BUILD_NUMBER
             withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
               sh "docker build -t gautamiii/${SERVICE_NAME}:${IMAGE_TAG} ."
             }
