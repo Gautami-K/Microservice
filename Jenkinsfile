@@ -1,3 +1,4 @@
+def IMAGE_TAG = env.BUILD_NUMBER
 pipeline {
   agent any
   environment {
@@ -7,7 +8,6 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-            def IMAGE_TAG = env.BUILD_NUMBER
             withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
               sh "docker build -t gautamiii/${SERVICE_NAME}:${IMAGE_TAG} ."
             }
