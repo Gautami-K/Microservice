@@ -5,8 +5,8 @@ pipeline {
   agent any
 
   environment {
-    IMAGE_TAG = imageTag
-    SERVICE_NAME = service
+    IMAGE_TAG = "imageTag"
+    SERVICE_NAME = "service"
   }
 
   stages {
