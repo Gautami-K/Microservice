@@ -49,6 +49,11 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version --short --client
 ```
+## KUBECONFIG
+
+```bash
+aws eks --region ap-south-1 update-kubeconfig --name devopsshack-cluster
+```
 
 ## EKSCTL
 
