@@ -49,13 +49,14 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 kubectl version --short --client
 ```
-## KUBECONFIG
+## KUBE CONFIG
 
 ```bash
 aws eks --region ap-south-1 update-kubeconfig --name devopsshack-cluster
 ```
 
-## EKSCTL
+## EKSCTL 
+Required when we setup eks cluster with commands given in next step
 
 ```bash
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
